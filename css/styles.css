@@ -83,6 +83,7 @@ button {
 button {
   display: flex;
   user-select: none;
+  cursor: pointer;
 }
 
 input:focus,
@@ -122,6 +123,7 @@ header.card h1 {
 
 .subtitle {
   color: var(--clr-white);
+  margin-top: 1rem;
 }
 
 /* CHECKBOX CONTAINER AND FIELD */
