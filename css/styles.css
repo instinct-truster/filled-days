@@ -46,6 +46,7 @@ body.light {
 html {
   font-size: 62.5%;
   position: relative;
+  height: 100vh;
 }
 
 html,
@@ -93,6 +94,10 @@ button:focus {
 
 label {
   display: none;
+}
+
+.button {
+  cursor: pointer;
 }
 
 /* ALL ARE CARDS  */
@@ -350,20 +355,19 @@ footer {
 /* FALL ANIMATION */
 .goals .card.fall {
   pointer-events: none;
-  animation: fall 0.2s forwards ease;
+  animation: fall 0.8s ease;
 }
 
+/* Fix this and make it nice vvv */
 @keyframes fall {
   0% {
-    opacity: 0.5;
-    transform: translateX(20%);
+    opacity: 1;
   }
   50% {
-    transform: translateX(25%) rotateZ(40deg);
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
-    transform: translateX(30%) rotateZ(90deg);
+    transform: translateY(60%);
     opacity: 0;
   }
 }

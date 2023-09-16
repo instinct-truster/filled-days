@@ -142,6 +142,7 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
     // Add classes
     card.classList.add("card");
     button.classList.add("clear");
+    button.classList.add("button");
     cbContainer.classList.add("cb-container");
     cbInput.classList.add("cb-input");
     item.classList.add("item");
