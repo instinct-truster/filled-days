@@ -1,0 +1,136 @@
+/* Custom CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins";
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* End of Custom CSS Reset */
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/poppins-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/poppins-v20-latin-700.woff2") format("woff2");
+}
+
+html[data-theme="gaming-board"] {
+  --img-background: url("assets/chess.jpg");
+  --primary: #194a50;
+  --secondary: #d37556;
+  --backdrop: #0c2431;
+  --accent: #d8a28c;
+  --text-on-primary: #e1dad2;
+  --text-on-secondary: #e1dad2;
+  --neutral-on-primary: #ffffff;
+  --neutral-on-secondary: #000000;
+  --header-height: 60px;
+  color-scheme: dark;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  height: var(--header-height);
+  font-size: 2rem;
+  color: var(--neutral-on-screen);
+  background-color: var(--primary);
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--secondary);
+  margin-bottom: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.background-image-container {
+  display: flex;
+  justify-content: center;
+  background-image: var(--img-background);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  border-top: 3px solid var(--secondary);
+  border-bottom: 3px solid var(--secondary);
+  height: 500px;
+  max-height: 600px;
+}
+
+.theme-menu {
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 20px;
+  border: 4px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 100%;
+  justify-content: space-evenly;
+  max-height: 400px;
+  width: 300px;
+  position: relative;
+  bottom: -80px;
+}
+
+.theme-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
