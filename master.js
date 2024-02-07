@@ -12,9 +12,9 @@ function main() {
       const themeImg = this.children[0];
       themeImg.setAttribute(
         "src",
-        themeImg.getAttribute("src") === "./assets/images/icon-sun.svg"
-          ? "./assets/images/icon-moon.svg"
-          : "./assets/images/icon-sun.svg"
+        themeImg.getAttribute("src") === "./assets/icons/icon-sun.svg"
+          ? "./assets/icons/icon-moon.svg"
+          : "./assets/icons/icon-sun.svg"
       );
     });
   // get all goals and initialize listeners
@@ -105,7 +105,7 @@ function stateGoal(index, completed) {
   localStorage.setItem("goals", JSON.stringify(goals));
 }
 
-/* removeManyGoal() FUNCTION TO REMOVE ONE GOAL */
+/* removeGoal() FUNCTION TO REMOVE ONE GOAL */
 
 function removeGoal(index) {
   const goals = JSON.parse(localStorage.getItem("goals"));
@@ -150,7 +150,7 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
     button.classList.add("clear");
     // Set attributes
     card.setAttribute("draggable", true);
-    img.setAttribute("src", "./assets/images/icon-cross.svg");
+    img.setAttribute("src", "./assets/icons/icon-add.svg");
     img.setAttribute("alt", "Clear it");
     cbInput.setAttribute("type", "checkbox");
     // set goal item for card

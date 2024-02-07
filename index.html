@@ -4,32 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sinatra: Live Life Your Way</title>
+    <title>Filled Days</title>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/images/favicon-32x32.png" />
+      href="./assets/icons/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <link
-      href="./assets/images/icon-check.svg"
+      href="./assets/icons/icon-check.svg"
       as="image"
       type="image/svg+xml"
       crossorigin="anonymous" />
   </head>
   <body>
-    <header class="card">
-      <h1>Sinatra</h1>
-      <button id="theme-switcher" title="Toggle dark-light">
-        <img src="./assets/images/icon-sun.svg" alt="Change color theme" />
+    <header class="header">
+      <div class="spacer"></div>
+      <pre class="header-text">Filled Days</pre>
+      <button
+        class="theme-switcher"
+        id="theme-switcher"
+        title="Toggle Day or Night Mode">
+        <img src="./assets/icons/icon-sun.svg" alt="Change color theme" />
       </button>
     </header>
     <main>
-      <p class="subtitle">Live life your way...</p>
       <div class="card add">
         <div class="cb-container">
           <button id="add-btn">+</button>
@@ -58,9 +61,7 @@
         </div>
       </div>
     </main>
-    <footer>
-      <p>Drag and drop to reorder list</p>
-    </footer>
-    <script src="./js/scripts.js"></script>
+
+    <script src="./master.js"></script>
   </body>
 </html>
