@@ -45,6 +45,12 @@ function main() {
   // add new goals on user input
   const add = document.getElementById("add-btn");
   const txtInput = document.querySelector(".txt-input");
+  txtInput.addEventListener("focus", () => {
+    txtInput.placeholder = "";
+  });
+  txtInput.addEventListener("blur", () => {
+    txtInput.placeholder = "your next goal awaits...";
+  });
   add.addEventListener("click", function () {
     const item = txtInput.value.trim();
     if (item) {
