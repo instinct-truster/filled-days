@@ -255,21 +255,21 @@ label {
   color: var(--clr-white);
 }
 
-.add .txt-container {
+.add .input-container {
   flex: 1;
 }
 
-.add .txt-container .txt-input {
+.add .input-container .text-input {
   width: 100%;
   padding: 0.7rem 0;
   color: var(--clr-white);
 }
 
-body.light .add .txt-container .txt-input {
+body.light .add .input-container .text-input {
   font-weight: var(--fw-bold);
 }
 
-.add .txt-container .txt-input::placeholder {
+.add .input-container .text-input::placeholder {
   color: var(--clr-gb-5);
   font-weight: var(--fw-normal);
 }
@@ -327,7 +327,7 @@ body.light .goals {
   pointer-events: all;
 }
 
-/* STAT CONTAINER */
+/* BOTTOM STAT CONTAINER */
 
 .stat {
   border-radius: 0 0 0.5rem 0.5rem;

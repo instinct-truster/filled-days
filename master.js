@@ -44,17 +44,17 @@ function main() {
   });
   // add new goals on user input
   const add = document.getElementById("add-btn");
-  const txtInput = document.querySelector(".txt-input");
-  txtInput.addEventListener("focus", () => {
-    txtInput.placeholder = "";
+  const textInput = document.querySelector(".text-input");
+  textInput.addEventListener("focus", () => {
+    textInput.placeholder = "";
   });
-  txtInput.addEventListener("blur", () => {
-    txtInput.placeholder = "your next goal awaits...";
+  textInput.addEventListener("blur", () => {
+    textInput.placeholder = "your next goal awaits...";
   });
   add.addEventListener("click", function () {
-    const item = txtInput.value.trim();
+    const item = textInput.value.trim();
     if (item) {
-      txtInput.value = "";
+      textInput.value = "";
       const goals = !localStorage.getItem("goals")
         ? []
         : JSON.parse(localStorage.getItem("goals"));
@@ -66,10 +66,10 @@ function main() {
       goals.push(currentGoal);
       localStorage.setItem("goals", JSON.stringify(goals));
     }
-    txtInput.focus();
+    textInput.focus();
   });
   // add goal also on enter key event
-  txtInput.addEventListener("keydown", function (e) {
+  textInput.addEventListener("keydown", function (e) {
     if (e.keyCode === 13) {
       add.click();
     }
@@ -103,7 +103,7 @@ function main() {
     });
 }
 
-/* stateGoal() FUNCTION TO UPDATE GOAL ABOUT COMPLETION */
+/* stateGoal() FUNCTION TO UPDATE GOAL */
 
 function stateGoal(index, completed) {
   const goals = JSON.parse(localStorage.getItem("goals"));
@@ -156,7 +156,7 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
     button.classList.add("clear");
     // Set attributes
     card.setAttribute("draggable", true);
-    img.setAttribute("src", "./assets/icons/icon-add.svg");
+    img.setAttribute("src", "./assets/icons/icon-trash.svg");
     img.setAttribute("alt", "Clear it");
     cbInput.setAttribute("type", "checkbox");
     // set goal item for card
