@@ -49,7 +49,7 @@ function main() {
     textInput.placeholder = "";
   });
   textInput.addEventListener("blur", () => {
-    textInput.placeholder = "your next goal awaits...";
+    textInput.placeholder = '"Your next goal awaits..."';
   });
   add.addEventListener("click", function () {
     const item = textInput.value.trim();
@@ -129,6 +129,8 @@ function removeManyGoal(indexes) {
   localStorage.setItem("goals", JSON.stringify(goals));
 }
 
+// editGoal() ADD FUNCTION TO EDIT GOAL
+
 /* addGoal() FUNCTION TO LIST/CREATE GOALS AND ADD EVENT LISTENERS */
 
 function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
@@ -144,7 +146,8 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
     const check = document.createElement("span");
     const item = document.createElement("p");
     const button = document.createElement("button");
-    const img = document.createElement("img");
+    const iconDelete = document.createElement("img");
+
     // Add classes
     card.classList.add("card");
     button.classList.add("clear");
@@ -156,8 +159,9 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
     button.classList.add("clear");
     // Set attributes
     card.setAttribute("draggable", true);
-    img.setAttribute("src", "./assets/icons/icon-trash.svg");
-    img.setAttribute("alt", "Clear it");
+    iconDelete.setAttribute("src", "./assets/icons/icon-trash.svg");
+    iconDelete.setAttribute("title", "Delete goal?");
+    iconDelete.setAttribute("alt", "Delete");
     cbInput.setAttribute("type", "checkbox");
     // set goal item for card
     item.textContent = goal.item;
@@ -209,7 +213,7 @@ function addGoal(goals = JSON.parse(localStorage.getItem("goals"))) {
       });
     });
     // parent.appendChild(child)
-    button.appendChild(img);
+    button.appendChild(iconDelete);
     cbContainer.appendChild(cbInput);
     cbContainer.appendChild(check);
     card.appendChild(cbContainer);

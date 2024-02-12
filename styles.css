@@ -9,14 +9,14 @@
   --clr-page-bg: hsl(25, 21%, 11%);
   /* --clr-card-bg: hsl(235, 24%, 19%); */
   --clr-card-bg: rgba(255, 255, 255, 0.5);
-  --clr-blue: hsl(220, 98%, 61%);
-  --clr-yellow: hsl(54, 100%, 57%);
-  --clr-orange: hsl(25, 98%, 55%);
+  --clr-blue: #3a7bfd;
+  --clr-yellow: hsl(55, 91%, 58%);
+  --clr-orange: #e58124;
   --clr-gb-1: hsl(236, 33%, 92%);
   --clr-gb-2: hsl(234, 39%, 75%);
   --clr-gb-3: hsl(234, 11%, 52%);
   --clr-gb-4: hsl(237, 12%, 36%);
-  --clr-gb-5: hsl(0, 0%, 100%);
+  --clr-gb-5: #f87a20;
   --clr-gb-6: hsl(0, 0%, 100%);
   --clr-box-shadow: hsl(0, 0%, 0%, 0.1);
   display: flex;
@@ -36,7 +36,7 @@ body.light {
   --clr-gb-1: hsl(240, 8%, 24%);
   --clr-gb-2: hsl(243, 12%, 30%);
   --clr-gb-3: hsl(252, 6%, 83%);
-  --clr-gb-4: hsl(237, 10%, 64%);
+  --clr-gb-4: hsl(237, 12%, 36%);
   --clr-gb-5: hsl(0, 0%, 100%);
   --clr-gb-6: hsl(0, 0%, 100%);
 }
@@ -106,6 +106,7 @@ img {
   background: linear-gradient(#ffffff, #ffffff, #f0b92d, #f19c46);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 0.5px rgb(255, 77, 0));
 }
 
 .spacer {
@@ -211,13 +212,17 @@ label {
   right: 0;
   pointer-events: none;
   border-radius: inherit;
+  background: url("../assets/icons/icon-check.svg"),
+    linear-gradient(180deg, var(--clr-yellow), var(--clr-orange));
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* CHECKED CARD */
 
 .card .cb-container .cb-input:checked + .check {
   background: url("../assets/icons/icon-check.svg"),
-    linear-gradient(180deg, var(--clr-yellow), var(--clr-orange));
+    linear-gradient(180deg, var(--clr-gb-4), var(--clr-gb-5));
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -226,11 +231,12 @@ label {
 
 .add {
   margin: 4rem 0 2.5rem 0;
-  border-radius: 0.5rem;
+  border-radius: 10px;
 }
 
 .add .cb-container {
   transition: background-color 0.5s ease;
+  background: linear-gradient(180deg, var(--clr-yellow), var(--clr-orange));
 }
 
 .add .cb-container #add-btn {
@@ -244,7 +250,7 @@ label {
 }
 
 .add .cb-container:hover {
-  background: linear-gradient(180deg, var(--clr-yellow), var(--clr-orange));
+  background: linear-gradient(180deg, var(--clr-gb-4), var(--clr-gb-5));
 }
 
 .add .cb-container:active {
@@ -262,7 +268,8 @@ label {
 .add .input-container .text-input {
   width: 100%;
   padding: 0.7rem 0;
-  color: var(--clr-white);
+  color: var(--clr-gb-4);
+  text-wrap: wrap;
 }
 
 body.light .add .input-container .text-input {
@@ -270,7 +277,7 @@ body.light .add .input-container .text-input {
 }
 
 .add .input-container .text-input::placeholder {
-  color: var(--clr-gb-5);
+  color: var(--clr-gb-4);
   font-weight: var(--fw-normal);
 }
 
@@ -285,16 +292,16 @@ body.light .add .input-container .text-input {
 }
 
 .goals .card:first-child {
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .goals > * + * {
-  border-top: 0.2rem solid var(--clr-gb-5);
+  border-top: 0.2rem solid var(--clr-gb-6);
 }
 
 .item {
   flex: 1;
-  color: var(--clr-gb-5);
+  color: var(--clr-gb-4);
 }
 
 .item:hover {
@@ -309,36 +316,34 @@ body.light .goals {
 
 .goals .card.checked .item {
   text-decoration: line-through;
-  color: var(--clr-gb-6);
-  text-decoration-color: var(--clr-gb-6);
+  color: var(--clr-gb-4);
+  text-decoration-color: var(--clr-gb-4);
 }
 
 /* CLEAR CONTAINER */
 
 .clear {
   cursor: pointer;
-  opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
 .goals .card:hover .clear {
-  opacity: 1;
   pointer-events: all;
 }
 
 /* BOTTOM STAT CONTAINER */
 
 .stat {
-  border-radius: 0 0 0.5rem 0.5rem;
-  border-top: 0.2rem solid var(--clr-gb-5);
+  border-radius: 0 0 10px 10px;
+  border-top: 0.2rem solid var(--clr-gb-6);
   font-size: calc(var(--base-font) - 0.3rem);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .stat * {
-  color: var(--clr-gb-5);
+  color: var(--clr-gb-6);
 }
 
 body.light .stat {
@@ -353,7 +358,7 @@ body.light .stat {
 }
 
 .stat .corner button:hover {
-  color: var(--clr-gb-5);
+  color: var(--clr-gb-4);
 }
 
 /* FILTER BUTTONS */
@@ -365,11 +370,11 @@ body.light .stat {
 }
 
 .stat .filter *:hover {
-  color: var(--clr-gb-6);
+  color: var(--clr-gb-4);
 }
 
 .stat .filter .on {
-  color: var(--clr-yellow);
+  color: var(--clr-gb-4);
 }
 
 /* FOOTER */
@@ -397,7 +402,7 @@ body.light .stat {
 }
 
 .goals.completed > .card.checked ~ .card.checked {
-  border-top: 0.2rem solid var(--clr-gb-5);
+  border-top: 0.2rem solid var(--clr-gb-6);
 }
 
 /* FALL ANIMATION */
